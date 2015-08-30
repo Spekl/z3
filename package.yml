@@ -1,5 +1,5 @@
 name       : z3          # name of the package
-version    : 4.3.0-1     # version of the package
+version    : 4.3.0-2     # version of the package
 kind       : tool        # one of tool or spec(s)
 description: An efficient SMT Solver from Microsoft Research. 
 
@@ -14,10 +14,24 @@ assets:
       name: Z3 Binaries for Windows
       url     : https://github.com/Spekl/static-files/releases/download/z3-4.3.0-x86.zip/z3-4.3.0-x86.zip
       platform: windows
+    - asset   : MAIN
+      name: Z3 Binaries for OSX
+      url     : https://github.com/Spekl/static-files/releases/download/z3-4.3.0-x86.zip/z3-4.3.0-x86-mac-10.10.tar.gz
+      platform: osx
+    - asset   : MAIN
+      name: Z3 Binaries for Linux
+      url     : https://github.com/Spekl/static-files/releases/download/z3-4.3.0-x86.zip/z3-4.3.0-x86-linux.tar.gz
+      platform: linux
         
 
 install:
   - cmd: unzip MAIN
     description: Unpacking Z3...
     platform: windows
+  - cmd: tar -zxvf MAIN
+    description: Making Backup Z3 (OSX)...
+    platform: osx
+  - cmd: tar -zxvf MAIN
+    description: Unpacking Z3 (Linux)...
+    platform: linux
 
